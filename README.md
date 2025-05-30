@@ -132,4 +132,16 @@ Please use the **toy_example.py** script.
 ```
 python toy_example.py --help
 ```
-## Please refer to **--help** for additional flags and their context.
+
+## Citation 
+If you find this work useful, please give us a citation.
+```
+@inproceedings{Pham2025MemorizationTG,
+  title={Memorization to Generalization: Emergence of Diffusion Models from Associative Memory},
+  author={Bao Pham and Gabriel Raya and Matteo Negri and Mohammed J. Zaki and Luca Ambrogioni and Dmitry Krotov},
+  year={2025},
+  url={https://api.semanticscholar.org/CorpusID:278960004}
+}
+```
+
+
