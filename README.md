@@ -1,7 +1,5 @@
 # Memorization to Generalization: Emergence of Diffusion Models from Associative Memory
 
-# Memorization to Generalization: The Emergence of Diffusion Models from Associative Memory
-
 ## Prerequisite
 ```bash
 pip install -r requirements.txt
