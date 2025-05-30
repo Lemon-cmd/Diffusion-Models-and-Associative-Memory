@@ -1,4 +1,4 @@
-# Memorization to Generalization: Emergence of Diffusion Models from Associative Memory [[Paper]](https://arxiv.org/abs/2505.21777)
+# Memorization to Generalization:<br>Emergence of Diffusion Models from Associative Memory</br>[[Paper]](https://arxiv.org/abs/2505.21777)
 
 ## Prerequisite
 ```bash
