@@ -1,5 +1,7 @@
 # Memorization to Generalization:<br>Emergence of Diffusion Models from Associative Memory [[Paper]](https://arxiv.org/abs/2505.21777)</br> 
 
+![image info](figures/energy_transition.png)
+
 ## Prerequisite
 ```bash
 pip install -r requirements.txt
