@@ -1,4 +1,4 @@
-# Memorization to Generalization: Emergence of Diffusion Models from Associative Memory
+# Memorization to Generalization: Emergence of Diffusion Models from Associative Memory [[Paper]](https://arxiv.org/abs/2505.21777)
 
 ## Prerequisite
 ```bash
@@ -140,7 +140,7 @@ If you find this work useful, please give us a citation.
   title={Memorization to Generalization: Emergence of Diffusion Models from Associative Memory},
   author={Bao Pham and Gabriel Raya and Matteo Negri and Mohammed J. Zaki and Luca Ambrogioni and Dmitry Krotov},
   year={2025},
-  url={https://api.semanticscholar.org/CorpusID:278960004}
+  url={https://arxiv.org/abs/2505.21777}
 }
 ```
 
