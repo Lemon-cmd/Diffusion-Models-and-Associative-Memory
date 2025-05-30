@@ -1,0 +1,31 @@
+data:
+  data_path: ../data
+  results_path: results
+  data_name: cifar10
+
+train:
+  global_batch_size: 128
+  iterations: 500000
+  num_workers: 8
+  log_every: 500
+  ckpt_every: 2500
+  train_size: 50000
+  valid_size: 1000
+  global_seed: 3407
+  lr: 0.0002
+  ema_decay: 0.9999
+  clip_grad: True
+  prediction_type: epsilon
+  beta_schedule: linear
+  timesteps: 1000
+  centercrop: False
+
+model:
+  image_size: 32
+  in_channels: 3
+  dim: 128
+  dim_mults: 1,2,2,2
+  attn_resolutions: 16
+  num_res_blocks: 2
+  dropout: 0.1
+

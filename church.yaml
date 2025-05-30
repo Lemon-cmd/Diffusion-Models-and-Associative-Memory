@@ -1,0 +1,30 @@
+data:
+  data_path: ../../lsun
+  results_path: results
+  data_name: lsun-church
+
+train:
+  global_batch_size: 64
+  iterations: 800000
+  num_workers: 8
+  log_every: 500
+  ckpt_every: 2500
+  train_size: 50000
+  valid_size: 1000
+  global_seed: 3407
+  lr: 0.0002
+  ema_decay: 0.9999
+  clip_grad: True
+  prediction_type: epsilon
+  beta_schedule: linear
+  timesteps: 1000
+  centercrop: True
+
+model:
+  image_size: 64
+  in_channels: 3
+  dim: 128
+  dim_mults: 1,1,2,2,4,4
+  attn_resolutions: 16
+  num_res_blocks: 2
+  dropout: 0.0
