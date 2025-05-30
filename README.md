@@ -1,6 +1,4 @@
-# Memorization to Generalization:<br>Emergence of Diffusion Models from Associative Memory [[Paper]](https://arxiv.org/abs/2505.21777)</br> 
-
-![image info](figures/energy_transition.png)
+# Memorization to Generalization: The Emergence of Diffusion Models from Associative Memory
 
 ## Prerequisite
 ```bash
@@ -36,6 +34,10 @@ Finally, please use the **--help** flag to display the available options.
 python train_unet.py --help
 ```
 If you find issues with the logging, you'll have to swap out the logger with print statements, unfortunately.
+
+## Pretrained Models
+Due to the space requirement, we won't be able to share the weights at the moment.
+**We will share it once the paper is accepted via google drive**.
 
 ## Storing Files
 Assuming that you will have many folders, denoting different models, you can store your fully trained models into a single folder:
@@ -134,16 +136,4 @@ Please use the **toy_example.py** script.
 ```
 python toy_example.py --help
 ```
-
-## Citation 
-If you find this work useful, please give us a citation.
-```
-@inproceedings{Pham2025MemorizationTG,
-  title={Memorization to Generalization: Emergence of Diffusion Models from Associative Memory},
-  author={Bao Pham and Gabriel Raya and Matteo Negri and Mohammed J. Zaki and Luca Ambrogioni and Dmitry Krotov},
-  year={2025},
-  url={https://arxiv.org/abs/2505.21777}
-}
-```
-
-
+## Please refer to **--help** for additional flags and their context.
