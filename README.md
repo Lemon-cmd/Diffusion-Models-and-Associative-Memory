@@ -36,7 +36,7 @@ python train_unet.py \
     --iterations 500000 \
     --num-workers 8
 ```
-Note, you can override the parameters set in the **.yaml** file since [simple-parsing](https://github.com/lebrice/SimpleParsing) is able to handle such a task.
+Note, you can override the parameters set in the **.yaml** file since [simple-parsing](https://github.com/lebrice/SimpleParsing) is able to handle such a task. Moreover, see the following [google drive link](https://drive.google.com/drive/folders/1bWiHdwc0nWd4gk5Ed-Vn2zaX5XUP2BtH?usp=share_link) for pre-trained models and their corresponding synthetic sets of various datasets.
 
 ---
 When the training begins, a result folder will be created and the following three folders are created as well:
