@@ -163,6 +163,7 @@ Please use the **toy_example.py** script.
 ```
 python toy_example.py --help
 ```
+![toy image](./figures/2d_toy_example.png)
 
 <!-- headings -->
 <a id="cite"></a>
