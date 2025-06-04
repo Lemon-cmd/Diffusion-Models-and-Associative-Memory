@@ -86,6 +86,9 @@ This will generate 100 **.npz** files where each holds 512 images. You will simp
 # Evaluation
 Below, we provide details on the scripts which you can run to reproduce the experimental results.
 
+![cherry_picked image](./figures/cherry_picked.png)
+
+
 <!-- headings -->
 <a id="distance-computation"></a>
 ## Computing Distances 
