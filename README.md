@@ -22,6 +22,7 @@ pip install -r requirements.txt
 <!-- headings -->
 <a id="training"></a>
 ## Training Models
+---
 Please use **train_unet.py** to train the DDPM-based diffusion model as the following:
 ```bash
 python train_unet.py \
@@ -81,6 +82,7 @@ python run_generate.py \
 ```
 This will generate 100 **.npz** files where each holds 512 images. You will simply need to load all of these files, concatenate the numpy arrays, and **save that concatenation into a single .npz file**.
 
+---
 # Evaluation
 Below, we provide details on the scripts which you can run to reproduce the experimental results.
 
