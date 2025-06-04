@@ -2,11 +2,25 @@
 
 ![main image](./figures/energy_transition.png)
 
+# Table of content
+ - [Setting up](#item-one-general)
+    - [Training Models](#training)
+    - [Storing Files](#storing)
+    - [Synthetic Data](#synthetic)
+ - [Analysis](#item-two-general)
+    - [Computing Distance](#distance-computation)
+    - [Classify Memorized, Spurious, and Generalized](#classify)
+    - [Critical Time](#critical)
+    - [Toy Model](#toy)
+ - [Citation](#cite)
+
 ## Prerequisite
 ```bash
 pip install -r requirements.txt
 ```
 
+<!-- headings -->
+<a id="training"></a>
 ## Training Models
 Please use **train_unet.py** to train the DDPM-based diffusion model as the following:
 ```bash
@@ -37,6 +51,8 @@ python train_unet.py --help
 ```
 If you find issues with the logging, you'll have to swap out the logger with print statements, unfortunately.
 
+<!-- headings -->
+<a id="storing"></a>
 ## Storing Files
 Assuming that you will have many folders, denoting different models, you can store your fully trained models into a single folder:
 ```bash
@@ -52,6 +68,8 @@ The codes will take care of this issue. Nonetheless, all files need to be stored
 
 **$K$.ext** where **.ext** can be either be **.pt** (model checkpoints) or **.npz** (synthetic sets and subsequent evaluation files). 
 
+<!-- headings -->
+<a id="synthetic"></a>
 ## Synthetic Generation
 Please use the following **run_generate.py** script to generate synthetic data given a model trained with $K$ training size.
 ```bash
@@ -66,6 +84,8 @@ This will generate 100 **.npz** files where each holds 512 images. You will simp
 # Evaluation
 Below, we provide details on the scripts which you can run to reproduce the experimental results.
 
+<!-- headings -->
+<a id="distance-computation"></a>
 ## Computing Distances 
 To compute the distances, use the following script **run_distances.py** and also use the **--help** for more details.
 ```bash
@@ -81,6 +101,8 @@ python run_distances.py \
 ```
 Since this process takes a very long time, you can submit multiple jobs to perform the distance computation (in parallel) across different $K$ training sizes, by using the flags **--start-idx** and **--final-idx** to specifiy the splits. 
 
+<!-- headings -->
+<a id="classify"></a>
 ## Classify Memorized, Spurious, and Generalized 
 To classify the memorized, spurious, and generalized samples, use the following script **run_classify.py**.
 ```bash
@@ -104,6 +126,8 @@ identified/
         /*.npz
 ```
 
+<!-- headings -->
+<a id="critical"></a>
 ## Critical Time Computation
 To perform the critical time computation, please use the **run_critical_times.py** script.
 ```bash
@@ -129,11 +153,17 @@ python run_energy.py \
     --sample-size 2048 \ 
     --batch-size 512 
 ```
+
+<!-- headings -->
+<a id="toy"></a>
 ## Toy Model
 Please use the **toy_example.py** script.
 ```
 python toy_example.py --help
 ```
+
+<!-- headings -->
+<a id="cite"></a>
 ## Citation
 If you find this work useful, please kindly cite us.
 ```
