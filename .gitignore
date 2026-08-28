@@ -1,0 +1,17 @@
+# notebooks are kept out of the repo for now
+*.ipynb
+.ipynb_checkpoints/
+
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# local experiment output
+results/
+model_ckpts/
+generations/
+identified/
+*.pt
+*.npz
