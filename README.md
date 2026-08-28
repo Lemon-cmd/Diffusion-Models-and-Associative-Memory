@@ -5,6 +5,7 @@
 # Table of content
  - [Setting up](#item-one-general)
     - [Training Models](#training)
+    - [Pre-trained Models](#pretrained)
     - [Storing Files](#storing)
     - [Synthetic Data](#synthetic)
  - [Analysis](#item-two-general)
@@ -36,7 +37,7 @@ python train_unet.py \
     --iterations 500000 \
     --num-workers 8
 ```
-Note, you can override the parameters set in the **.yaml** file since [simple-parsing](https://github.com/lebrice/SimpleParsing) is able to handle such a task. Moreover, see the following [google drive link](https://drive.google.com/drive/folders/1bWiHdwc0nWd4gk5Ed-Vn2zaX5XUP2BtH?usp=share_link) for pre-trained models and their corresponding synthetic sets of various datasets.
+Note, you can override the parameters set in the **.yaml** file since [simple-parsing](https://github.com/lebrice/SimpleParsing) is able to handle such a task. Moreover, all of our pre-trained models are available on the [Hugging Face Hub](https://huggingface.co/lemoncmd) -- see [Pre-trained Models](#pretrained) below. The corresponding synthetic sets remain on this [google drive link](https://drive.google.com/drive/folders/1bWiHdwc0nWd4gk5Ed-Vn2zaX5XUP2BtH?usp=share_link).
 
 ---
 When the training begins, a result folder will be created and the following three folders are created as well:
@@ -51,6 +52,52 @@ Finally, please use the **--help** flag to display the available options.
 python train_unet.py --help
 ```
 If you find issues with the logging, you'll have to swap out the logger with print statements, unfortunately.
+
+<!-- headings -->
+<a id="pretrained"></a>
+## Pre-trained Models
+We release every model used in the paper on the [Hugging Face Hub](https://huggingface.co/lemoncmd),
+as one repository per dataset and UNet width:
+
+| Dataset | `--dim` | Models | Size | Repository |
+|---|---|---|---|---|
+| CIFAR-10 | 64 | 38 | 5.1 GB | [dm-am-cifar10-unet64](https://huggingface.co/lemoncmd/dm-am-cifar10-unet64) |
+| CIFAR-10 | 96 | 38 | 11.4 GB | [dm-am-cifar10-unet96](https://huggingface.co/lemoncmd/dm-am-cifar10-unet96) |
+| CIFAR-10 | 128 | 38 | 20.3 GB | [dm-am-cifar10-unet128](https://huggingface.co/lemoncmd/dm-am-cifar10-unet128) |
+| LSUN Church 64 | 64 | 38 | 15.6 GB | [dm-am-church64-unet64](https://huggingface.co/lemoncmd/dm-am-church64-unet64) |
+| LSUN Church 64 | 96 | 38 | 35.0 GB | [dm-am-church64-unet96](https://huggingface.co/lemoncmd/dm-am-church64-unet96) |
+| LSUN Church 64 | 128 | 38 | 62.2 GB | [dm-am-church64-unet128](https://huggingface.co/lemoncmd/dm-am-church64-unet128) |
+| CelebA-HQ 64 | 64 | 38 | 15.6 GB | [dm-am-celebahq64-unet64](https://huggingface.co/lemoncmd/dm-am-celebahq64-unet64) |
+| Fashion-MNIST | 128 | 38 | 13.9 GB | [dm-am-fmnist-unet128](https://huggingface.co/lemoncmd/dm-am-fmnist-unet128) |
+| MNIST | 128 | 38 | 13.9 GB | [dm-am-mnist-unet128](https://huggingface.co/lemoncmd/dm-am-mnist-unet128) |
+
+Each repository holds 38 models named **$K$.pt**, following the same convention as
+[Storing Files](#storing) below: $K$ is the **size of the training set**, not a training
+step. Every model was trained for the same number of iterations, so sweeping $K$ in
+increasing order walks a single dataset through memorization, the spurious regime, and
+generalization.
+
+Use **src/hf_checkpoints.py** to fetch them.
+```bash
+# which training sizes are available
+python src/hf_checkpoints.py --data-name cifar10 --dim 128 --list
+
+# a single model, the one trained on K=16000 samples
+python src/hf_checkpoints.py --data-name cifar10 --dim 128 --k 16000
+
+# every model for this dataset and width, laid out ready for the analysis scripts
+python src/hf_checkpoints.py --data-name cifar10 --dim 128 --result-path model_ckpts/
+```
+The same helpers are importable, if you would rather pull weights straight into python.
+```python
+from src.hf_checkpoints import load_checkpoint, get_train_sizes
+
+get_train_sizes("cifar10", 128)              # [2, 500, 1000, ..., 50000]
+ema = load_checkpoint("cifar10", 128, 16000) # EMA weights, as sampled from in the paper
+```
+Downloading a whole repository with **--result-path** gives you a folder of $K$.pt files,
+which is exactly the layout **run_generate.py**, **run_critical_times.py**, and
+**run_energy.py** expect for their **--ckpt-path** argument.
 
 <!-- headings -->
 <a id="storing"></a>
