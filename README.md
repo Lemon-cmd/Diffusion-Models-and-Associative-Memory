@@ -95,10 +95,9 @@ as one repository per dataset and UNet width.
 | CIFAR-10 | 64 | 38 | 5.1 GB | [dm-am-cifar10-unet64](https://huggingface.co/lemoncmd/dm-am-cifar10-unet64) |
 | CIFAR-10 | 96 | 38 | 11.4 GB | [dm-am-cifar10-unet96](https://huggingface.co/lemoncmd/dm-am-cifar10-unet96) |
 | CIFAR-10 | 128 | 38 | 20.3 GB | [dm-am-cifar10-unet128](https://huggingface.co/lemoncmd/dm-am-cifar10-unet128) |
-| LSUN Church 64 | 64 | 38 | 15.6 GB | [dm-am-church64-unet64](https://huggingface.co/lemoncmd/dm-am-church64-unet64) |
-| LSUN Church 64 | 96 | 38 | 35.0 GB | [dm-am-church64-unet96](https://huggingface.co/lemoncmd/dm-am-church64-unet96) |
-| LSUN Church 64 | 128 | 38 | 62.2 GB | [dm-am-church64-unet128](https://huggingface.co/lemoncmd/dm-am-church64-unet128) |
-| CelebA-HQ 64 | 64 | 38 | 15.6 GB | [dm-am-celebahq64-unet64](https://huggingface.co/lemoncmd/dm-am-celebahq64-unet64) |
+| LSUN Church | 64 | 38 | 15.6 GB | [dm-am-church64-unet64](https://huggingface.co/lemoncmd/dm-am-church64-unet64) |
+| LSUN Church | 96 | 38 | 35.0 GB | [dm-am-church64-unet96](https://huggingface.co/lemoncmd/dm-am-church64-unet96) |
+| LSUN Church | 128 | 38 | 62.2 GB | [dm-am-church64-unet128](https://huggingface.co/lemoncmd/dm-am-church64-unet128) |
 | Fashion-MNIST | 128 | 38 | 13.9 GB | [dm-am-fmnist-unet128](https://huggingface.co/lemoncmd/dm-am-fmnist-unet128) |
 | MNIST | 128 | 38 | 13.9 GB | [dm-am-mnist-unet128](https://huggingface.co/lemoncmd/dm-am-mnist-unet128) |
 
@@ -182,7 +181,7 @@ selection:
 
 | Flag | Default | Meaning |
 |---|---|---|
-| `--data-name` | `cifar10` | One of `celeba`, `celebahq`, `mnist`, `cifar10`, `lsun-church`, `fashionmnist` |
+| `--data-name` | `cifar10` | One of `mnist`, `cifar10`, `lsun-church`, `fashionmnist` |
 | `--train-size` | `1000` | $K$ — the quantity this whole study sweeps |
 | `--dim` | `128` | UNet base width |
 | `--dim-mults` | `1,2,2,2` | Width multipliers per resolution |
