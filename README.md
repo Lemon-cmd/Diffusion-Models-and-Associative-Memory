@@ -10,7 +10,7 @@ Bao Pham · Gabriel Raya · Matteo Negri · Mohammed J. Zaki · Luca Ambrogioni 
 
 </div>
 
-![main image](./figures/combined_energy_cherry_picked.png)
+![main image](./figures/energy_teaser.png)
 
 ## Overview
 
@@ -224,6 +224,8 @@ This writes `--num-files` files of `--batch-size` images each. **Concatenate the
 single `K.npz`** before moving on — the analysis scripts expect one file per $K$. The
 script is adapted from [DiT](https://github.com/facebookresearch/DiT) and runs across
 multiple GPUs and nodes.
+
+![main image](./figures/combined_energy_cherry_picked.png)
 
 ### Computing distances
 
