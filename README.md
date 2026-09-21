@@ -10,7 +10,7 @@ Bao Pham · Gabriel Raya · Matteo Negri · Mohammed J. Zaki · Luca Ambrogioni 
 
 </div>
 
-![main image](./figures/energy_transition.png)
+![main image](./figures/combined_energy_cherry_picked.png)
 
 ## Overview
 
@@ -290,9 +290,6 @@ identified/
     spurious/*.npz
     generalized/*.npz
 ```
-
-![cherry_picked image](./figures/cherry_picked.png)
-
 ### Critical time
 
 The point in the reverse trajectory where a sample commits to a basin.
@@ -348,6 +345,7 @@ python run_energy.py \
 | `--use-least` | off | Use the bottom rather than top samples |
 
 ## Toy model
+![toy image](./figures/2d_toy_example.png)
 
 A 2D example on a circle, where the energy landscape can be drawn directly.
 [`toy_example.py`](./toy_example.py) is a `click` group with five subcommands:
@@ -364,8 +362,6 @@ python toy_example.py basin --sample_size 2 --checkpoint 500000 --delta 0.01
 `plots` clusters the recovered attractors — pass `--dynamic_threshold True` for DBSCAN
 instead of a fixed `--distance_threshold`. `basin` computes the optimal recovery time.
 Run `python toy_example.py --help` for the full set of documented examples.
-
-![toy image](./figures/2d_toy_example.png)
 
 ## Repository layout
 
